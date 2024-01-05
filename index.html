@@ -23,28 +23,22 @@
       </nav>
       <button class="button | display-sm-none display-md-inline-flex">Resume  <ion-icon name="download-outline"></ion-icon></button>
 
-              <script>
-function downloadPDF() {
-    // Create a new instance of jsPDF
-    var pdf = new jsPDF();
+<script>
+function showPDF() {
+    // Specify the path to your PDF file
+    var pdfPath = 'https://drive.google.com/file/d/15BV3OZVjuDwYAz9om8PEwJEMoBMpHcS0/view?usp=drivesdk';
 
-    // Add content to the PDF (replace this with your actual content)
-    pdf.text("Your resume content goes here", 10, 10);
+    // Create an <embed> element to display the PDF
+    var embedElement = document.createElement('embed');
+    embedElement.src = pdfPath;
+    embedElement.type = 'application/pdf';
+    embedElement.width = '100%';
+    embedElement.height = '600px'; // Adjust the height as needed
 
-    // Save the PDF as a blob
-    var blob = pdf.output("blob");
-
-    // Create a download link
-    var link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "https://drive.google.com/file/d/15BV3OZVjuDwYAz9om8PEwJEMoBMpHcS0/view?usp=drivesdk.pdf";
-
-    // Append the link to the body and trigger the click event
-    document.body.appendChild(link);
-    link.click();
-
-    // Remove the link from the body
-    document.body.removeChild(link);
+    // Replace the content of the container with the PDF
+    var pdfContainer = document.getElementById('pdfContainer');
+    pdfContainer.innerHTML = '';
+    pdfContainer.appendChild(embedElement);
 }
 </script>
               
