@@ -22,6 +22,31 @@
         </ul>
       </nav>
       <button class="button | display-sm-none display-md-inline-flex">Resume  <ion-icon name="download-outline"></ion-icon></button>
+
+              <script>
+function downloadPDF() {
+    // Create a new instance of jsPDF
+    var pdf = new jsPDF();
+
+    // Add content to the PDF (replace this with your actual content)
+    pdf.text("Your resume content goes here", 10, 10);
+
+    // Save the PDF as a blob
+    var blob = pdf.output("blob");
+
+    // Create a download link
+    var link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = ""C:\Users\udayb\Downloads\FAANGPath_Simple_Template__2_.pdf"";
+
+    // Append the link to the body and trigger the click event
+    document.body.appendChild(link);
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+}
+</script>
               
      </div>
    </div>
@@ -204,6 +229,8 @@ Exiting the application. </p>
 <!-- end footer -->
   </section>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+              
 </body>
 </html>
 
