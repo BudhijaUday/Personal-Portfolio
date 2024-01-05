@@ -23,26 +23,6 @@
       </nav>
       <button class="button | display-sm-none display-md-inline-flex">Resume  <ion-icon name="download-outline"></ion-icon></button>
 
-              <div id="pdfContainer"></div>
-
-<script>
-function showPDF() {
-    // Specify the path to your PDF file
-    var pdfPath = 'https://drive.google.com/file/d/15BV3OZVjuDwYAz9om8PEwJEMoBMpHcS0/view?usp=drivesdk';
-
-    // Create an <embed> element to display the PDF
-    var embedElement = document.createElement('embed');
-    embedElement.src = pdfPath;
-    embedElement.type = 'application/pdf';
-    embedElement.width = '100%';
-    embedElement.height = '600px'; // Adjust the height as needed
-
-    // Replace the content of the container with the PDF
-    var pdfContainer = document.getElementById('pdfContainer');
-    pdfContainer.innerHTML = '';
-    pdfContainer.appendChild(embedElement);
-}
-</script>
               
      </div>
    </div>
